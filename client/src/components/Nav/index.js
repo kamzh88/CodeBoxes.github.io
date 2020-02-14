@@ -8,6 +8,7 @@ class Nav extends Component {
 
     render() {
         return (
+            
                 <AppBar>
                     <Toolbar>
                         <Typography variant="h6" style={{ marginRight: 16 }}>
