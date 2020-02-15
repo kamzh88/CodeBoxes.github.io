@@ -8,7 +8,7 @@ const styles = {
         background: "lightgrey",
         textAlign: "center",
         padding: 0,
-        marginTop: 65,
+        marginTop: 80,
         height: 130,
         overflow: "auto"
     },
