@@ -3,13 +3,18 @@ import Heading from '../../components/Jumbotron';
 import SearchBooks from "../../components/SearchBooks";
 import SearchResults from "../../components/SearchResults";
 import Wrapper from "../../components/Wrapper"
+import API from "../../utils/API";
 
 class Search extends Component {
     state = {
         search: "",
         books: [],
         // results
-        
+    }
+
+    componentDidMount() {
+        API.getBookList()
+        .then(res => console.log(res));
     }
 
     handleInputChange = event => {
