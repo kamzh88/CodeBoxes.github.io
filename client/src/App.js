@@ -4,14 +4,17 @@ import Nav from "./components/Nav";
 import './App.css';
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
+import Wrapper from "./components/Wrapper";
 
 function App() {
   return (
-    
+
     <BrowserRouter>
       <Nav />
-      <Route exact path="/" component={Search} />
-      <Route exact path="/save" component={Saved} />
+      <Wrapper>
+        <Route exact path="/" component={Search} />
+        <Route exact path="/save" component={Saved} />
+      </Wrapper>
     </BrowserRouter>
   );
 }
