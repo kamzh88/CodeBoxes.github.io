@@ -4,12 +4,15 @@ import { FormControl, InputLabel, Input, Card, Button } from '@material-ui/core'
 const styles = {
     Card: {
         marginTop: 30,
-        height: 200,
-       
+        height: 200,  
     },
     form: {
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        padding: 10
+    },
+    inputStyle: {
+        padding: 20
     }
 }
 
@@ -21,8 +24,8 @@ class SearchBooks extends Component {
                 <h3>Book Search</h3>
                 <form style={styles.form} onSubmit={this.handleSubmit}>
                     <FormControl>
-                        <InputLabel htmlFor="my-input">Book Name</InputLabel>
-                        <Input id="my-input" aria-describedby="my-helper-text" />
+                        <InputLabel  style={styles.inputStyles} htmlFor="my-input">Book Name</InputLabel>
+                        <Input style={styles.inputStyles} id="my-input" aria-describedby="my-helper-text" />
                     </FormControl>
                     <Button 
                     variant={'contained'}
