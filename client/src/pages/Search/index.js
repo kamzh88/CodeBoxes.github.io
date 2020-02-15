@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Heading from '../../components/Jumbotron';
 import SearchBooks from "../../components/SearchBooks";
+import SearchResults from "../../components/SearchResults";
 
 class Search extends Component {
 
@@ -9,6 +10,7 @@ class Search extends Component {
             <Fragment>
                 <Heading />
                 <SearchBooks />
+                <SearchResults />
             </Fragment>
         );
     };
