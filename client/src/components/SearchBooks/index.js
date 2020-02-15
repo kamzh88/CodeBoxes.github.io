@@ -21,7 +21,7 @@ class SearchBooks extends Component {
     render() {
         return (
             <Card style={styles.Card}>
-                <h3>Book Search</h3>
+                <h2 style={{marginLeft: 10}}>Book Search</h2>
                 <form style={styles.form} onSubmit={this.handleSubmit}>
                     <FormControl>
                         <InputLabel  style={styles.inputStyles} htmlFor="my-input">Book Name</InputLabel>
