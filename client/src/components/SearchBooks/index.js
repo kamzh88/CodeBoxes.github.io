@@ -4,7 +4,7 @@ import { FormControl, InputLabel, Input, Card, Button } from '@material-ui/core'
 const styles = {
     Card: {
         marginTop: 30,
-        height: 200,  
+        height: 170,  
     },
     form: {
         display: "flex",
