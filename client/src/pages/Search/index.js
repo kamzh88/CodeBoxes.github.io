@@ -28,6 +28,10 @@ class Search extends Component {
             .catch(err => this.setState({ error: err.message }));
     }
 
+    handleBtnClick = event => {
+        console.log("clicked");
+    }
+
     render() {
         return (
             <Wrapper>
@@ -39,6 +43,7 @@ class Search extends Component {
                 />
                 <SearchResults
                     results={this.state.results}
+                    handleBtnClick={this.handleBtnClick}
                 />
             </Wrapper>
         );
