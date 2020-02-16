@@ -18,12 +18,21 @@ class SearchResults extends Component {
                     <h2 style={{ marginLeft: 60 }}>Results</h2>
                     <ul>
                         {this.props.results.map(result => (
+                            
                             <Card key={result.volumeInfo.industryIdentifiers[0].identifier} variant="outlined" style={{ width: "auto", margin: 20 }}>
                                 <li style={{ overflow: "auto", padding: 10 }}>
-                                    <Grid container justify="flex-end">
-                                        <Button variant="contained" color="primary" size="small" startIcon={<SaveIcon />} 
-                                        onClick={this.props.handleBtnClick}
-                                        >Save</Button>
+                                    <Grid 
+                                    container 
+                                    justify="flex-end">
+                                        <Button 
+                                        variant="contained" 
+                                        color="primary" 
+                                        size="small" 
+                                        startIcon={<SaveIcon />} 
+                                        value={result}
+                                        onClick={() => this.props.handleBtnClick(result.volumeInfo.industryIdentifiers[0].identifier)}
+                                        >Save
+                                        </Button>
                                     </Grid> 
                                     Title: {result.volumeInfo.title}<br></br>
                                     {/* Image: {result.volumeInfo.imageLinks.smallThumbnail} */}

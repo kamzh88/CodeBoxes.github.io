@@ -8,7 +8,7 @@ import API from "../../utils/API";
 class Search extends Component {
     state = {
         search: "",
-        results: []
+        results: [],
     }
 
     handleInputChange = event => {
@@ -28,8 +28,9 @@ class Search extends Component {
             .catch(err => this.setState({ error: err.message }));
     }
 
-    handleBtnClick = event => {
-        console.log("clicked");
+    handleBtnClick = id => {
+        console.log(this.state.results);
+        console.log(id);
     }
 
     render() {
