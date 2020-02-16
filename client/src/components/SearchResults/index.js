@@ -21,16 +21,14 @@ class SearchResults extends Component {
                             <Card variant="outlined" style={{ width: "auto", margin: 20 }}>
                                 <li key={result.volumeInfo.industryIdentifiers[0].identifier} style={{ overflow: "auto", padding: 10 }}>
                                     <Grid
-                                    container
-                                    justify="flex-end">
+                                        container
+                                        justify="flex-end">
                                         <Button
                                             variant="contained"
                                             color="primary"
                                             size="small"
                                             startIcon={<SaveIcon />}
-                                            style={{ position: 'static', top: 8, left: 1000 }}
-                                        >
-                                            Save
+                                        >Save
                                         </Button>
                                     </Grid>
                                     Title: {result.volumeInfo.title}<br></br>
