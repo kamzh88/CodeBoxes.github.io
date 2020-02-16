@@ -24,13 +24,11 @@ class Search extends Component {
                     throw new Error(res.data.message);
                 }
                 this.setState({ results: res.data.items, error: "" });
-                console.log(this.state.results);
             })
             .catch(err => this.setState({ error: err.message }));
     }
 
     render() {
-        console.log(this.state.results)
         return (
             <Wrapper>
                 <Heading />
@@ -40,7 +38,7 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                 />
                 <SearchResults
-                     
+                    results={this.state.results}
                 />
             </Wrapper>
         );

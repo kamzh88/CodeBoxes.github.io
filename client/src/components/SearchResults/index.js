@@ -5,24 +5,36 @@ import { BookResult } from "../BookResult";
 const styles = {
     Card: {
         marginTop: 30,
-        height: 540
+        height: 540,
+        overflowY: 'scroll'
     }
 }
 
-class SearchBooks extends Component {
+class SearchResults extends Component {
 
     render() {
+        // const results = this.props.results
+        // console.log(results)
         return (
-            <Card style={styles.Card}>
-                <h2 style={{ marginLeft: 10 }}>Search Results</h2>
-                {/* {this.state.results.map(result => (
-                    <BookResult
-                    />
-                ))} */}
-            </Card>
+            
+                <Card style={styles.Card}>
+                    <h2 style={{ marginLeft: 10 }}>Results</h2>
+                    <ul> 
+                        {this.props.results.map(result => (
+                        <li key={result.volumeInfo.industryIdentifiers[0].identifier}>
+                            Title: {result.volumeInfo.title}<br></br>
+                            Subtitle: {result.volumeInfo.subtitle}<br></br>
+                            Authors: {result.volumeInfo.authors}<br></br>
+                            Description: {result.volumeInfo.description}
+                            <br></br><br></br>
+                        </li>
+                        ))}
+                    </ul>                 
+                </Card>
+         
 
         );
     };
 };
 
-export default SearchBooks;
+export default SearchResults;
