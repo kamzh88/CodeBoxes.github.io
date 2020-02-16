@@ -13,8 +13,7 @@ const styles = {
 class SearchResults extends Component {
 
     render() {
-        // const results = this.props.results
-        // console.log(results)
+
         return (
             <div style={styles.Card}>
                 <Card variant="outlined">
