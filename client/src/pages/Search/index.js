@@ -29,8 +29,16 @@ class Search extends Component {
     }
 
     handleBtnClick = id => {
-        console.log(this.state.results);
-        console.log(id);
+        const books = this.state.results;
+        for (let i = 0; i < books.length; i++) {
+            // console.log(books[i].id);
+            if (books[i].id === id) {
+                const title = books[i].volumeInfo.title;
+                const authors = books[i].volumeInfo.authors;
+                const description = books[i].volumeInfo.description;
+                const link = books[i].volumeInfo.infoLink;
+            }
+        }
     }
 
     render() {

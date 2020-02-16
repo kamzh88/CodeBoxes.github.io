@@ -13,13 +13,14 @@ const styles = {
 class SearchResults extends Component {
     render() {
         return (
+            
             <div style={styles.Card}>
                 <Card variant="outlined">
                     <h2 style={{ marginLeft: 60 }}>Results</h2>
                     <ul>
                         {this.props.results.map(result => (
                             
-                            <Card key={result.volumeInfo.industryIdentifiers[0].identifier} variant="outlined" style={{ width: "auto", margin: 20 }}>
+                            <Card key={result.id} variant="outlined" style={{ width: "auto", margin: 20 }}>
                                 <li style={{ overflow: "auto", padding: 10 }}>
                                     <Grid 
                                     container 
@@ -30,7 +31,7 @@ class SearchResults extends Component {
                                         size="small" 
                                         startIcon={<SaveIcon />} 
                                         value={result}
-                                        onClick={() => this.props.handleBtnClick(result.volumeInfo.industryIdentifiers[0].identifier)}
+                                        onClick={() => this.props.handleBtnClick(result.id)}
                                         >Save
                                         </Button>
                                     </Grid> 
