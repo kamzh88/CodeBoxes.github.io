@@ -8,31 +8,39 @@ import API from "../../utils/API";
 class Search extends Component {
     state = {
         search: "",
-        books: [],
-        // results
-    }
-
-    componentDidMount() {
-        API.getBookList()
-        .then(res => console.log(res));
+        results: []
     }
 
     handleInputChange = event => {
-        let search = this.state.search;
         this.setState({ search: event.target.value });
     };
 
+    handleFormSubmit = event => {
+        event.preventDefault();
+        const search = encodeURIComponent(this.state.search.trim())
+        API.getBookList(search)
+            .then(res => {
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+                }
+                this.setState({ results: res.data.items, error: "" });
+                console.log(this.state.results);
+            })
+            .catch(err => this.setState({ error: err.message }));
+    }
+
     render() {
+        console.log(this.state.results)
         return (
             <Wrapper>
                 <Heading />
                 <SearchBooks
-                    // handleFormSubmit={this.handleFormSubmit}
-                    search = {this.state.search}
+                    handleFormSubmit={this.handleFormSubmit}
+                    search={this.state.search}
                     handleInputChange={this.handleInputChange}
                 />
                 <SearchResults
-
+                     
                 />
             </Wrapper>
         );

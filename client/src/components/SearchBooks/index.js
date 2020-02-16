@@ -21,7 +21,7 @@ function SearchBooks(props) {
     return (
         <Card style={styles.Card}>
             <h2 style={{ marginLeft: 10 }}>Book Search</h2>
-            <form style={styles.form} onSubmit={props.handleFormSubmit}>
+            <form style={styles.form}>
                 <FormControl>
                     <InputLabel style={styles.inputStyles} htmlFor="my-input">Book Name</InputLabel>
                     <Input
@@ -35,6 +35,7 @@ function SearchBooks(props) {
                 </FormControl>
                 <Button
                     variant={'contained'}
+                    onClick={props.handleFormSubmit}
                 >Submit</Button>
             </form>
         </Card>
