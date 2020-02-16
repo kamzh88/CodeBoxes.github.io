@@ -18,8 +18,8 @@ class SearchResults extends Component {
                     <h2 style={{ marginLeft: 60 }}>Results</h2>
                     <ul>
                         {this.props.results.map(result => (
-                            <Card variant="outlined" style={{ width: "auto", margin: 20 }}>
-                                <li key={result.volumeInfo.industryIdentifiers[0].identifier} style={{ overflow: "auto", padding: 10 }}>
+                            <Card key={result.volumeInfo.industryIdentifiers[0].identifier} variant="outlined" style={{ width: "auto", margin: 20 }}>
+                                <li style={{ overflow: "auto", padding: 10 }}>
                                     <Grid
                                         container
                                         justify="flex-end">
@@ -30,12 +30,13 @@ class SearchResults extends Component {
                                             startIcon={<SaveIcon />}
                                         >Save
                                         </Button>
-                                    </Grid>
+                                    </Grid> 
                                     Title: {result.volumeInfo.title}<br></br>
+                                    {/* Image: {result.volumeInfo.imageLinks.smallThumbnail} */}
                                     Subtitle: {result.volumeInfo.subtitle}<br></br>
                                     Authors: {result.volumeInfo.authors}<br></br>
-                                    Description: {result.volumeInfo.description}
-                                    <br></br><br></br>
+                                    Description: {result.volumeInfo.description}<br></br>
+                                    Link: {result.volumeInfo.infoLink}<br></br>
                                 </li>
                             </Card>
                         ))}
