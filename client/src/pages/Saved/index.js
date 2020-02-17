@@ -1,6 +1,15 @@
 import React, { Component } from "react";
+import { Card, Button, Grid } from '@material-ui/core';
 import Heading from '../../components/Jumbotron';
 import API from "../../utils/API";
+
+const styles = {
+    Card: {
+        marginTop: 30,
+        height: 540,
+        overflowY: 'scroll'
+    }
+}
 
 class Saved extends Component {
     state = {
@@ -26,21 +35,27 @@ class Saved extends Component {
     }
 
     render() {
-       
+
         return (
             <div>
                 <Heading />
-                {this.state.books.map(book => (
-                    <div key={book._id}>
-                        <img src={book.image} />
-                        <p>Title: {book.title}</p>
-                        <p>Subtitle: {book.subtitle}</p>
-                        <p>Authors: {book.authors}</p>
-                        <p>Description: {book.description}</p>
-                        <a href={book.link}>More Info</a><br></br>
-                        <br></br>
-                    </div>
-                ))}
+                <div style={styles.Card}>
+                    <Card variant="outlined">
+                        {this.state.books.map((book, index) => (
+                            <Card key={index} variant="outlined" style={{ width: "auto", margin: 20 }}>
+                                <div style={{ overflow: "auto", padding: 10 }}>
+                                    <img src={book.image} />
+                                    <p>Title: {book.title}</p>
+                                    <p>Subtitle: {book.subtitle}</p>
+                                    <p>Authors: {book.authors}</p>
+                                    <p>Description: {book.description}</p>
+                                    <a href={book.link}>More Info</a><br></br>
+                                    <br></br>
+                                </div>
+                            </Card>
+                        ))}
+                    </Card>
+                </div>
             </div>
         )
     }
