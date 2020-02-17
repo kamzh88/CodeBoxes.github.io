@@ -8,14 +8,14 @@ const styles = {
         height: 540,
         overflowY: 'scroll'
     }
-}
+};
 
 class SaveResults extends Component {
     render() {
         return (
-            <div></div>
-        )
-    }
-}
+        <div>Title: {this.props}</div>
+        );
+    };
+};
 
 export default SaveResults;
