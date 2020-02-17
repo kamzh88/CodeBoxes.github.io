@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Card, Button, Grid } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
 
@@ -12,15 +12,16 @@ const styles = {
 
 class SearchResults extends Component {
     render() {
+        console.log(this.props.results)
         return (
             
             <div style={styles.Card}>
                 <Card variant="outlined">
                     <h2 style={{ marginLeft: 60 }}>Results</h2>
                     <ul>
-                        {this.props.results.map(result => (
-                            
-                            <Card key={result.id} variant="outlined" style={{ width: "auto", margin: 20 }}>
+                        {this.props.results.map(({volumeInfo}, index)=> (
+
+                            <Card key={index} variant="outlined" style={{ width: "auto", margin: 20 }}>
                                 <li style={{ overflow: "auto", padding: 10 }}>
                                     <Grid 
                                     container 
@@ -30,17 +31,17 @@ class SearchResults extends Component {
                                         color="primary" 
                                         size="small" 
                                         startIcon={<SaveIcon />} 
-                                        value={result}
-                                        onClick={() => this.props.handleBtnClick(result.id)}
+                                       
+                                        onClick={() => this.props.handleBtnClick({title: volumeInfo.title, subTitle: volumeInfo.subtitle, authors: volumeInfo.authors, description: volumeInfo.description, link: volumeInfo.infoLink})}
                                         >Save
                                         </Button>
                                     </Grid> 
-                                    Title: {result.volumeInfo.title}<br></br>
-                                    {/* Image: {result.volumeInfo.imageLinks.smallThumbnail} */}
-                                    Subtitle: {result.volumeInfo.subtitle}<br></br>
-                                    Authors: {result.volumeInfo.authors}<br></br>
-                                    Description: {result.volumeInfo.description}<br></br>
-                                    Link: {result.volumeInfo.infoLink}<br></br>
+                                    Title: {volumeInfo.title}<br></br>
+                                    Image: {volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail : 'n/a' }
+                                    Subtitle: {volumeInfo.subtitle}<br></br>
+                                    Authors: {volumeInfo.authors}<br></br>
+                                    Description: {volumeInfo.description}<br></br>
+                                    Link: {volumeInfo.infoLink}<br></br>
                                 </li>
                             </Card>
                         ))}

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Heading from '../../components/Jumbotron';
 import SearchBooks from "../../components/SearchBooks";
 import SearchResults from "../../components/SearchResults";
@@ -28,17 +28,13 @@ class Search extends Component {
             .catch(err => this.setState({ error: err.message }));
     }
 
-    handleBtnClick = id => {
-        const books = this.state.results;
-        for (let i = 0; i < books.length; i++) {
-            // console.log(books[i].id);
-            if (books[i].id === id) {
-                const title = books[i].volumeInfo.title;
-                const authors = books[i].volumeInfo.authors;
-                const description = books[i].volumeInfo.description;
-                const link = books[i].volumeInfo.infoLink;
-            }
-        }
+    handleBtnClick = book => {
+     
+                API.saveBook(book)
+                    .then("book saved")
+                    .catch(err => console.log(err));
+          
+        
     }
 
     render() {
