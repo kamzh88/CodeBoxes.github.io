@@ -4,6 +4,10 @@ const apiRoutes = require("./api");
 
 router.use("/api", apiRoutes);
 
+router.get("/", function(req, res) {
+    res.json(path.join(__dirname, "public/index.html"));
+  });
+
 router.use(function(req, res) {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });

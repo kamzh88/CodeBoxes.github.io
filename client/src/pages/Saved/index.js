@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Heading from '../../components/Jumbotron';
-import SaveResults from "../../components/SaveResults";
 import API from "../../utils/API";
-import Wrapper from "../../components/Wrapper";
 
 class Saved extends Component {
     state = {
@@ -15,10 +13,8 @@ class Saved extends Component {
     componentDidMount() {
         API.getBooks()
             .then(res => {
-
                 let title = this.state.title;
                 let author = this.state.author;
-
                 res.data.map(book => {
                     title.push(book.title)
                     author.push(book.authors);
@@ -30,7 +26,7 @@ class Saved extends Component {
     }
 
     render() {
-        console.log(this.state.books);
+       
         return (
             <div>
                 <Heading />
