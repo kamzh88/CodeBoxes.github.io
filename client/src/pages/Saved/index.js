@@ -32,12 +32,12 @@ class Saved extends Component {
                 <Heading />
                 {this.state.books.map(book => (
                     <div key={book._id}>
-                        <p><img src={book.image} /></p>
+                        <img src={book.image} />
                         <p>Title: {book.title}</p>
                         <p>Subtitle: {book.subtitle}</p>
                         <p>Authors: {book.authors}</p>
                         <p>Description: {book.description}</p>
-                        <p>Link: {book.link}</p>
+                        <a href={book.link}>More Info</a><br></br>
                         <br></br>
                     </div>
                 ))}

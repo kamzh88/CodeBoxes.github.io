@@ -44,7 +44,7 @@ class SearchResults extends Component {
                                     Subtitle: {volumeInfo.subtitle}<br></br>
                                     Authors: {volumeInfo.authors}<br></br>
                                     Description: {volumeInfo.description}<br></br>
-                                    Link: {volumeInfo.infoLink}<br></br>
+                                    <a href={volumeInfo.infoLink}>More Info</a><br></br>
                                 </li>
                             </Card>
                         ))}
