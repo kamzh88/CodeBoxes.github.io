@@ -12,8 +12,12 @@ const styles = {
 
 class SaveResults extends Component {
     render() {
+        // console.log(this.props.author)
         return (
-        <div>Title: {this.props}</div>
+            <div>
+                Title: {this.props.title}
+                Author: {this.props.author}
+            </div>
         );
     };
 };
