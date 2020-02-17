@@ -30,7 +30,6 @@ class Search extends Component {
 
     handleBtnClick = book => {
         API.saveBook(book)
-            .then("book saved")
             .catch(err => console.log(err));
     }
 

@@ -39,8 +39,8 @@ class SearchResults extends Component {
                                         >Save
                                         </Button>
                                     </Grid>
+                                    {volumeInfo.imageLinks ? <img src={volumeInfo.imageLinks.smallThumbnail} /> : 'n/a'}<br></br>
                                     Title: {volumeInfo.title}<br></br>
-                                    Image: {volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail : 'n/a'}
                                     Subtitle: {volumeInfo.subtitle}<br></br>
                                     Authors: {volumeInfo.authors}<br></br>
                                     Description: {volumeInfo.description}<br></br>
