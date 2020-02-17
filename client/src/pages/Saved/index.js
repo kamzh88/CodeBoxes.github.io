@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Heading from '../../components/Jumbotron';
-import SearchResults from "../../components/SearchResults";
+import SaveResults from "../../components/SaveResults";
 import API from "../../utils/API";
 
 class Saved extends Component {
+    state = {
+        books: []
+    };
 
     componentDidMount() {
         this.loadBooks();
@@ -11,8 +14,9 @@ class Saved extends Component {
 
     loadBooks = () => {
         API.getBooks()
-            .then(res =>{
-                console.log(res)
+            .then(res => {
+                console.log(res.data)
+                this.setState({ books: res.data })
             })
             .catch(err => console.log(err));
     }
@@ -21,9 +25,9 @@ class Saved extends Component {
         return (
             <div>
                 <Heading />
-                {/* <SearchResults>
+                <SaveResults>
 
-            </SearchResults> */}
+                </SaveResults>
             </div>
         )
     }
