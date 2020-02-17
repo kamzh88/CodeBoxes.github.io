@@ -13,6 +13,7 @@ if (process.env.Node_ENV === "production") {
 
 app.use(routes);
 
+mongoose.Promise= global.Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds215988.mlab.com:15988/heroku_hcnggx6f");
 
 app.listen(PORT, function() {
