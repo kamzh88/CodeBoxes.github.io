@@ -5,4 +5,7 @@ router.route("/")
     .post(booksController.create)
     .get(booksController.findAll);
 
+router.route("/google/:search")
+    .get(booksController.google)
+
 module.exports = router;
