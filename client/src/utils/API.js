@@ -1,6 +1,5 @@
 import axios from "axios";
 
-const APIKEY = process.env.REACT_APP_BOOKS_KEY;
 
 export default {
     getBookList: function(search) {
